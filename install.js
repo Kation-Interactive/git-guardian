@@ -22,7 +22,7 @@ function setupProject() {
   const packageJson = JSON.parse(fs.readFileSync('package.json'));
   packageJson.scripts = {
     ...packageJson.scripts,
-    prepare: 'husky install',
+    prepare: 'husky install -D',
     'lint-branch': 'validate-branch-name --config .validate-branch-namerc',
     'lint-commit-msg': 'commitlint -E HUSKY_GIT_PARAMS',
   };
@@ -34,7 +34,7 @@ function setupProject() {
   fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
 
   console.log('Running husky install...');
-  execSync('npx husky-init && npm install', { stdio: 'inherit' });
+  execSync('npx husky install', { stdio: 'inherit' });
 
   console.log('Adding Husky hooks...');
   execSync('npx husky add .husky/pre-commit "npx validate-branch-name"', { stdio: 'inherit' });
