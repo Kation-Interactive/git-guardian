@@ -22,7 +22,7 @@ function setupProject() {
   const packageJson = JSON.parse(fs.readFileSync('package.json'));
   packageJson.scripts = {
     ...packageJson.scripts,
-    prepare: 'husky install',
+    postinstall: 'husky install',
     'lint-branch': 'validate-branch-name --config .validate-branch-namerc',
     'lint-commit-msg': 'commitlint -E HUSKY_GIT_PARAMS',
   };
