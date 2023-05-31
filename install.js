@@ -34,7 +34,7 @@ function setupProject() {
   fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
 
   console.log('Running husky install...');
-  execSync('npx husky install', { stdio: 'inherit' });
+  execSync('npx husky-init && npm install', { stdio: 'inherit' });
 
   console.log('Adding Husky hooks...');
   execSync('npx husky add .husky/pre-commit "npx validate-branch-name"', { stdio: 'inherit' });
