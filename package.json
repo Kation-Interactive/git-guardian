@@ -1,13 +1,14 @@
 {
-  "name": "@jordycold/quality-code",
+  "name": "quality-code",
   "version": "1.0.1",
   "description": "",
+  "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "node dist/index.js",
     "build": "tsc",
-    "postinstall": "node install.js",
+    "postinstall": "node setup.js",
     "test": "mocha"
   },
   "repository": {
@@ -30,8 +31,5 @@
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
-  },
-  "dependencies": {
-    "quality-code": "^1.0.0"
   }
 }
