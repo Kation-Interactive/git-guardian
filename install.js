@@ -53,3 +53,5 @@ function setupProject() {
 module.exports = {
   setupProject,
 };
+
+setupProject();
