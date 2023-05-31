@@ -9,17 +9,21 @@ function setupProject() {
   execSync('npm install husky validate-branch-name @commitlint/cli @commitlint/config-conventional --save-dev', { stdio: 'inherit' });
 
   console.log('Creating configuration files...');
-  fs.writeFileSync(path.join(rootDir, '.validate-branch-namerc'), JSON.stringify({
+  const validateBranchNamercPath = path.join(rootDir, '.validate-branch-namerc');
+  fs.writeFileSync(validateBranchNamercPath, JSON.stringify({
     pattern: '^(feature|fix|hotfix|release)\\/[-a-zA-Z0-9_]+$',
     errorMessage: "El nombre de la rama debe seguir el formato 'feature/nombre-de-la-rama'",
   }, null, 2));
+  console.log(`Created ${validateBranchNamercPath}`);
 
-  fs.writeFileSync(path.join(rootDir, 'commitlint.config.js'), `module.exports = {
+  const commitlintConfigPath = path.join(rootDir, 'commitlint.config.js');
+  fs.writeFileSync(commitlintConfigPath, `module.exports = {
     extends: ['@commitlint/config-conventional'],
     rules: {
       'type-enum': [2, 'always', ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore']],
     },
   };`);
+  console.log(`Created ${commitlintConfigPath}`);
 
   console.log('Setting up package.json...');
   const packageJsonPath = path.join(rootDir, 'package.json');
@@ -36,6 +40,7 @@ function setupProject() {
     },
   };
   fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+  console.log(`Updated ${packageJsonPath}`);
 
   console.log('Running husky install...');
   execSync('npx husky install', { stdio: 'inherit' });
@@ -49,7 +54,9 @@ function setupProject() {
   npx --no -- commitlint --edit \${1} --config commitlint.config.js
   `;
 
-  fs.writeFileSync(path.join(rootDir, '.husky/commit-msg'), commitMsgHookScript);
+  const commitMsgHookPath = path.join(rootDir, '.husky/commit-msg');
+  fs.writeFileSync(commitMsgHookPath, commitMsgHookScript);
+  console.log(`Created ${commitMsgHookPath}`);
 
   console.log('Setting up completed.');
 }
