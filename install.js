@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 function setupProject() {
-  const rootDir = process.cwd(); // Obtiene el directorio raíz del proyecto
+  const rootDir = path.join(process.cwd(), '..');
 
   console.log('Installing dependencies...');
   execSync('npm install husky validate-branch-name @commitlint/cli @commitlint/config-conventional --save-dev', { stdio: 'inherit' });
