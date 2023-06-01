@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 function setupProject() {
-  const rootDir = path.join(process.cwd(), '..');
-  
+  const rootDir = path.join(process.cwd(), '../..');
+
   console.log('Setting root directory to', rootDir);
   process.chdir(rootDir);
 
