@@ -1,6 +1,6 @@
 {
   "name": "quality-code",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "",
   "private": false,
   "main": "dist/index.js",
