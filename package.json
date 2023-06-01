@@ -1,6 +1,6 @@
 {
   "name": "quality-code",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "A utility to set up Git hooks and configuration files for enforcing branch name validation and commit message linting in a project using popular packages like Husky, Validate Branch Name, and Commitlint. It installs necessary dependencies, creates configuration files, sets up package.json scripts, and adds Husky hooks. Branch names are validated against a specified pattern, and commit messages are linted based on conventional commit guidelines.",
   "private": false,
   "main": "dist/index.js",
@@ -15,7 +15,16 @@
     "type": "git",
     "url": "git+https://github.com/jordycold/quality-code.git"
   },
-  "keywords": ["quality", "code", "code quality", "best practices", "git", "branch", "husky", "commitlint"],
+  "keywords": [
+    "quality",
+    "code",
+    "code quality",
+    "best practices",
+    "git",
+    "branch",
+    "husky",
+    "commitlint"
+  ],
   "author": "https://github.com/jordycold",
   "license": "ISC",
   "bugs": {
