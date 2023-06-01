@@ -15,8 +15,8 @@
     "type": "git",
     "url": "git+https://github.com/jordycold/quality-code.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["quality", "code", "code quality", "best practices", "git", "branch", "husky", "commitlint"],
+  "author": "https://github.com/jordycold",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jordycold/quality-code/issues"
