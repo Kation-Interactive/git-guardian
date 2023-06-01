@@ -67,6 +67,9 @@ function setupProject() {
   fs.writeFileSync(commitMsgHookPath, commitMsgHookScript);
   console.log(`Created ${commitMsgHookPath}`);
 
+  console.log('Setting executable permission for commit-msg...');
+  execSync('chmod +x .husky/commit-msg', { stdio: 'inherit' });
+
   console.log('Setup completed.');
 }
 
