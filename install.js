@@ -21,8 +21,7 @@ function setupProject() {
   console.log('Creating configuration files...');
   const validateBranchNamercPath = path.join(rootDir, '.validate-branch-namerc');
   fs.writeFileSync(validateBranchNamercPath, JSON.stringify({
-    pattern: '^(feature|fix|hotfix|release)\\/[-a-zA-Z0-9_]+$',
-    errorMessage: "El nombre de la rama debe seguir el formato 'feature/nombre-de-la-rama'",
+    "pattern": "^(master|stage|feature|fix|hotfix|release)(\\/[a-zA-Z0-9_-]+)*$"
   }, null, 2));
   console.log(`Created ${validateBranchNamercPath}`);
 
@@ -58,8 +57,8 @@ function setupProject() {
   console.log('Adding Husky hooks...');
   execSync('npx husky add .husky/pre-commit "npx validate-branch-name"', { stdio: 'inherit' });
   const commitMsgHookScript = `
-  #!/bin/sh
-  . "$(dirname $0)/_/husky.sh"
+  #!/usr/bin/env sh
+  . "$(dirname -- "$0")/_/husky.sh"
 
   npx --no -- commitlint --edit \${1} --config commitlint.config.js
   `;
