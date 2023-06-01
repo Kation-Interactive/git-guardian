@@ -16,7 +16,7 @@ Quality Code is a utility to set up Git hooks and configuration files for enforc
 To install Quality Code, run the following command:
 
 ```bash
-npm install quality-code --save-dev
+npm install quality-code
 ```
 
 ## Configuration
