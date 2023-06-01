@@ -4,7 +4,17 @@ const path = require('path');
 
 function setupProject() {
   const rootDir = path.join(process.cwd(), '..');
+  
+  console.log('Setting root directory to', rootDir);
+  process.chdir(rootDir);
 
+  console.log('Verifying Git installation...');
+  const gitInstalled = isGitInstalled();
+  if (!gitInstalled) {
+    console.error('Error: Git is not installed in the root directory.');
+    return;
+  }
+  
   console.log('Installing dependencies...');
   execSync('npm install husky validate-branch-name @commitlint/cli @commitlint/config-conventional --save-dev', { stdio: 'inherit' });
 
@@ -58,7 +68,12 @@ function setupProject() {
   fs.writeFileSync(commitMsgHookPath, commitMsgHookScript);
   console.log(`Created ${commitMsgHookPath}`);
 
-  console.log('Setting up completed.');
+  console.log('Setup completed.');
+}
+
+function isGitInstalled() {
+  const gitDir = path.join(process.cwd(), '.git');
+  return fs.existsSync(gitDir);
 }
 
 module.exports = {
