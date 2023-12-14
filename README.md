@@ -1,9 +1,9 @@
-# Quality Code
+# GitGuardian
 
 [![npm version](https://img.shields.io/npm/v/quality-code.svg)](https://www.npmjs.com/package/quality-code)
 [![License](https://img.shields.io/npm/l/quality-code.svg)](https://github.com/jordycold/quality-code/blob/main/LICENSE)
 
-Quality Code is a utility to set up Git hooks and configuration files for enforcing branch name validation and commit message linting in a project using popular packages like Husky, Validate Branch Name, and Commitlint. It installs necessary dependencies, creates configuration files, sets up package.json scripts, and adds Husky hooks. Branch names are validated against a specified pattern, and commit messages are linted based on conventional commit guidelines.
+GitGuardian is a utility to set up Git hooks and configuration files for enforcing branch name validation and commit message linting in a project using popular packages like Husky, Validate Branch Name, and Commitlint. It installs necessary dependencies, creates configuration files, sets up package.json scripts, and adds Husky hooks. Branch names are validated against a specified pattern, and commit messages are linted based on conventional commit guidelines.
 
 ## Features
 
@@ -13,15 +13,15 @@ Quality Code is a utility to set up Git hooks and configuration files for enforc
 
 ## Installation
 
-To install Quality Code, run the following command:
+To install GitGuardian, run the following command:
 
 ```bash
-npm install quality-code
+npm install git-guardian
 ```
 
 ## Configuration
 
-Quality Code provides the following configuration files:
+GitGuardian provides the following configuration files:
 
 - `.validate-branch-namerc`: Configures the branch name pattern and error message.
 - `commitlint.config.js`: Configures the commit message format and rules.
@@ -34,7 +34,7 @@ Contributions are welcome! If you encounter any issues or have suggestions for i
 
 ## License
 
-Quality Code is released under the MIT License.
+GitGuardian is released under the MIT License.
 
 This project relies on the following packages for its functionality:
 
@@ -43,4 +43,4 @@ This project relies on the following packages for its functionality:
 - @commitlint/cli: Lint commit messages using conventional commit standards.
 - @commitlint/config-conventional: Default configuration for commitlint using conventional commits.
 
-These packages greatly contribute to the features and functionality of Quality Code. We extend our gratitude to their maintainers and contributors for their excellent work.
+These packages greatly contribute to the features and functionality of GitGuardian. We extend our gratitude to their maintainers and contributors for their excellent work.
