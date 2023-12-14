@@ -1,7 +1,7 @@
 # GitGuardian
 
-[![npm version](https://img.shields.io/npm/v/quality-code.svg)](https://www.npmjs.com/package/quality-code)
-[![License](https://img.shields.io/npm/l/quality-code.svg)](https://github.com/jordycold/quality-code/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/git-guardian.svg)](https://www.npmjs.com/package/git-guardian)
+[![License](https://img.shields.io/npm/l/git-guardian.svg)](https://github.com/jordycold/git-guardian/blob/main/LICENSE)
 
 GitGuardian is a utility to set up Git hooks and configuration files for enforcing branch name validation and commit message linting in a project using popular packages like Husky, Validate Branch Name, and Commitlint. It installs necessary dependencies, creates configuration files, sets up package.json scripts, and adds Husky hooks. Branch names are validated against a specified pattern, and commit messages are linted based on conventional commit guidelines.
 
